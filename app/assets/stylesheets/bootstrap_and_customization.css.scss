@@ -11,11 +11,28 @@ $jumbotron-bg:                     white;
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
+.navbar {
+     padding-bottom: 10px;
+}
 .center {
      text-align: center;
 }
 
-.navbar-brand {
-     font-weight: bold;
+.navbar-brand img {
+     max-width: 120px;
 }
 
+.caption p {
+		 font-size: 15px;
+}
+
+span.glyphicon {
+    font-size: 35px;
+    color: #16a085;
+    padding-top: 50px;
+}
+
+.top-space {
+		padding-top: 50px;
+}
