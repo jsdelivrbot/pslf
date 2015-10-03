@@ -28,11 +28,36 @@ $jumbotron-bg:                     white;
 }
 
 span.glyphicon {
-    font-size: 35px;
+    font-size: 70px;
     color: #16a085;
     padding-top: 50px;
 }
 
 .top-space {
 		padding-top: 50px;
+}
+
+.btn {
+		background-color: transparent;
+  	border: 3px solid #f26c4f;
+  	color: #f26c4f;
+}
+
+.explanation p {
+		font-size: 15px;
+		vertical-align: middle;
+		text-align: left;
+}
+
+.explanation h2 {
+		text-align: left;
+}
+
+.CTA {
+		padding-top: 30px;
+}
+
+.form-control {
+		max-width: 500px;
+
 }
