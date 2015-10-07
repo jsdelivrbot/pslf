@@ -1,17 +1,17 @@
 <div class="jumbotron">
 	<div class="container">
 	  <div class="text-center">
-	    <h1>Government, 501(c)3 non-profit, and public service workers</h1>
+	    <h1>Government, 501(c)(3) non-profit, and public service workers...</h1>
 	    <div class="row">
 	      <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-	        <h2 class="landing-subheader pad10">Determine your eligibility then track your Public Service Loan Forgiveness (PSLF) benefit.</h2>
+	        <h2 class="landing-subheader pad10">determine your eligibility then track your Public Service Student Loan Forgiveness (PSLF) benefit.</h2>
 	      </div>
 	    </div>
 	  </div>
 	  <div class="pad60"></div>
 	  <div class="landing-btn-pad text-center">
 	    <% if user_signed_in? %>
-	      <%= link_to "Let's Get Started", overview_path, class: "btn btn-primary btn-lg" %>
+	      <%= link_to "Let's Get Started", eligibility_path, class: "btn btn-primary btn-lg" %>
 	    <% else %>
 	      <%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
 			  <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
@@ -78,10 +78,10 @@
     </div>
     <div class="text-center">
 	    <% if user_signed_in? %>
-      	<%= link_to "Let's Get Started", overview_path, class: "btn btn-primary btn-lg" %>
+      	<%= link_to "Let's Get Started", eligibility_path, class: "btn btn-primary btn-lg" %>
     	<% else %>
-      	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-		  	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      	<%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
+		  	<%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
     	<% end %>
     </div>
     <div class="pad60">
