@@ -1,22 +1,90 @@
-<div class="jumbotron center">
-	<% if user_signed_in? %>
-  	<h1>Work in public service? <br> Get your student loans forgiven.</h1>
-		<br>
-		<h4>Determine your eligibility then track your Public Service Loan Forgiveness (PSLF) benefit.</h4>
-		<br>
-		<br>
-		<p>
-	    <%= link_to "Let's Get Started", overview_path, class: "btn btn-primary btn-lg" %>
-		</p>
-  <% else %>
-		<h1>Work in public service? <br> Get your student loans forgiven.</h1>
-		<br>
-		<h4>Determine your eligibility then track your Public Service Loan Forgiveness (PSLF) benefit.</h4>
-		<br>
-		<br>
-		<p>
-			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-	    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-		</p>
-	<% end %>
+<div class="jumbotron">
+	<div class="container">
+	  <div class="text-center">
+	    <h1>Work in public service? <br> Get your student loans forgiven.</h1>
+	    <div class="row">
+	      <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	        <h2 class="landing-subheader pad10">Determine your eligibility then track your Public Service Loan Forgiveness (PSLF) benefit.</h2>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="pad60"></div>
+	  <div class="landing-btn-pad text-center">
+	    <% if user_signed_in? %>
+	      <%= link_to "Let's Get Started", overview_path, class: "btn btn-primary btn-lg" %>
+	    <% else %>
+	      <%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
+			  <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+	    <% end %>
+	  </div>
+	  <div class="pad40"></div>
+	</div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="pad40"></div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+	  	<div class="pad20"></div>
+	  	<div class="landing-jumbo-text">
+				<strong>PSLF Streamlined</strong>
+	  	</div>
+	  	<div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10 col-sm-12 col-xs-12 text-center">
+	    	<h4>We can’t wait to help you qualify, track, and receive your Public Service Loan Forgiveness (PSLF) benefit.</h4>
+	    	<div class="pad20"></div>
+	  	</div>
+	  	<div class="col-lg-offset-1 col-md-offset-1"></div>
+	    <%= image_tag('mobileimg.png') %>
+	  </div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	  <div class="row">
+	    <div class="pad80"></div>
+		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		    <span class="glyphicon glyphicon-ok pull-right" aria-hidden="true"></span>
+		  </div>
+		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+		    <div class="landing-jumbo-text2 pad5">
+		      <strong>Eligibility</strong></h1>
+		    </div>
+		    <p>Quickly determine if you’re loans, employment, and payments make you eligible for PSLF.</p>
+		  </div>
+	  </div>
+	  <div class="pad40"></div>
+	  <div class="row">
+	    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		    <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span>
+		  </div>
+		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+		    <div class="landing-jumbo-text2">
+		      <strong>Forms</strong></h1>
+		    </div>
+		    <p>Access and store the necessary PSLF paperwork all in one convenient location.</p>
+		  </div>
+	  </div>
+	  <div class="pad40"></div>
+	  <div class="row">
+		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		    <span class="glyphicon glyphicon-share pull-right" aria-hidden="true"></span>
+		  </div>
+		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+		    <div class="landing-jumbo-text2 pad5">
+		      <strong>Track and Submit</strong></h1>
+		    </div>
+		    <p>Review, track, and ultimately submit for Public Service Loan Forgiveness.</p>
+		  </div>
+	  </div>
+	</div>
+  </div>
+    <div class="pad80">
+    </div>
+    <div class="text-center">
+	    <% if user_signed_in? %>
+      	<%= link_to "Let's Get Started", overview_path, class: "btn btn-primary btn-lg" %>
+    	<% else %>
+      	<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+		  	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    	<% end %>
+    </div>
+    <div class="pad60">
+    </div>
+  </div>
 </div>

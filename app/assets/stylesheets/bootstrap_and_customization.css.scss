@@ -2,7 +2,7 @@
 
 $body-bg:                          #ecf0f1;
 $font-family-sans-serif:           'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:                    45px;
+$navbar-height:                    65px;
 $navbar-default-bg:                white;
 $navbar-default-brand-color:       #16a085;
 $brand-primary:                    #f26c4f;
@@ -12,15 +12,16 @@ $jumbotron-bg:                     white;
 @import 'bootstrap';
 
 
-.navbar {
-     padding-bottom: 10px;
-}
 .center {
      text-align: center;
 }
 
 .navbar-brand img {
      max-width: 120px;
+}
+
+.navbar {
+		margin-bottom: 0px;
 }
 
 .caption p {
@@ -30,17 +31,34 @@ $jumbotron-bg:                     white;
 span.glyphicon {
     font-size: 70px;
     color: #16a085;
-    padding-top: 50px;
-}
-
-.top-space {
-		padding-top: 50px;
 }
 
 .btn {
+		padding: 15px;
+		width: 200px;
+		margin: 10px;
+}
+
+.btn-primary {
 		background-color: transparent;
   	border: 3px solid #f26c4f;
   	color: #f26c4f;
+  	&:hover {
+  			background-color: #f26c4f;
+  			border: 3px solid #f26c4f;
+  			color: white;
+  	}
+}
+
+.btn-default {
+		background-color: transparent;
+  	border: 3px solid #16a085;
+  	color: #16a085;
+  	&:hover {
+        background-color: #16a085;
+  			color: white;
+  			border: 3px solid #16a085;
+    }
 }
 
 .explanation p {
@@ -53,11 +71,142 @@ span.glyphicon {
 		text-align: left;
 }
 
-.CTA {
-		padding-top: 30px;
-}
-
 .form-control {
 		max-width: 500px;
 
 }
+
+.jumbotron {
+  position: relative;
+  background: url("School.png") no-repeat center center;
+  color: white;
+  background-size: cover;
+
+}
+
+.landing-subheader {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width: 320px) {
+	.landing-subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400; }
+}
+
+.bottom-arrow {
+		background-color: #FFF;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		height: 30px; }
+
+.static-wrapper {
+		text-align: center;
+		padding-left: 10px !important;
+		padding-right: 10px !important; }
+		.static-wrapper ul {
+		list-style-type: none !important;
+		padding: 0px; }
+
+
+.landing-jumbo-text {
+		font-size: 36px;
+		line-height: 40px; }
+
+.landing-jumbo-text2 {
+		font-size: 24px;
+		line-height: 36px;
+}
+
+.pad210 {
+  	padding-top: 210px; }
+
+.pad200 {
+  padding-top: 200px; }
+
+.pad190 {
+  padding-top: 190px; }
+
+.pad170 {
+  padding-top: 170px; }
+
+.pad160 {
+  padding-top: 160px; }
+
+.pad150 {
+  padding-top: 150px; }
+
+.pad140 {
+  padding-top: 140px; }
+
+.pad130 {
+  padding-top: 130px; }
+
+.pad120 {
+  padding-top: 120px; }
+
+.pad110 {
+  padding-top: 110px; }
+
+.pad100 {
+  padding-top: 100px; }
+
+.pad90 {
+  padding-top: 90px; }
+
+.pad85 {
+  padding-top: 85px; }
+
+.pad80 {
+  padding-top: 80px; }
+
+.pad75 {
+  padding-top: 75px; }
+
+.pad70 {
+  padding-top: 70px; }
+
+.pad65 {
+  padding-top: 65px; }
+
+.pad60 {
+  padding-top: 60px; }
+
+.pad55 {
+  padding-top: 55px; }
+
+.pad50 {
+  padding-top: 45px; }
+
+.pad45 {
+  padding-top: 45px; }
+
+.pad40 {
+  padding-top: 40px; }
+
+.pad35 {
+  padding-top: 35px; }
+
+.pad30 {
+  padding-top: 30px; }
+
+.pad25 {
+  padding-top: 25px; }
+
+.pad20 {
+  padding-top: 20px; }
+
+.pad15 {
+  padding-top: 15px; }
+
+.pad10 {
+  padding-top: 10px; }
+
+.pad5 {
+  padding-top: 5px; }
