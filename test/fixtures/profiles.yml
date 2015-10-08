@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employment: MyString
+  loans: MyString
+  amount: MyString
+
+two:
+  employment: MyString
+  loans: MyString
+  amount: MyString

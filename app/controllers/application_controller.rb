@@ -3,12 +3,4 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-   def edit
-      @user = User.find params[:id]
-   end
-
-   def update
-      @user = User.find params[:id]
-   end
-
 end
