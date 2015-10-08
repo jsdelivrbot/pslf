@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -15,7 +16,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = current_user.profiles.build
+    @profile = Profile.new
   end
 
   # GET /profiles/1/edit
@@ -25,7 +26,7 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = current_user.profiles.build(profile_params)
+    @profile = Profile.new(profile_params)
 
     respond_to do |format|
       if @profile.save
@@ -69,7 +70,7 @@ class ProfilesController < ApplicationController
     end
 
     def correct_user
-      @pin = current_user.profiles.find_by(id: params[:id])
+      @profile = current_user.profiles.find_by(id: params[:id])
       redirect_to profiles_path, notice: "Not authorized to edit this pin" if @profile.nil?
     end
 
