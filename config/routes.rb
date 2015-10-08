@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root "pages#home"
-  get "overview" => "pages#overview"
   get "eligibility" => "pages#eligibility"
+
+  resources :users, only: [:index, :show, :edit, :update]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -59,3 +61,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+
