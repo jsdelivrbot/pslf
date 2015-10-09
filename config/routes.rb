@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :profiles
   devise_for :users
   root "pages#home"
-  get "eligibility" => "pages#eligibility"
+  get "dashboard" => "pages#dashboard"
 
 
 
