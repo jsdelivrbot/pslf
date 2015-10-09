@@ -61,24 +61,6 @@ span.glyphicon {
     }
 }
 
-.dropdown {
-		margin: 10px;
-}
-
-.dropdown-menu {
-		width: 100%;
-		text-align: center;
-	}
-
-.dropdown-menu > li > a {
-  &:hover,
-  &:focus {
-    text-decoration: none;
-    color: white;
-    background-color: #16a085;
-  }
-}
-
 .explanation p {
 		font-size: 15px;
 		vertical-align: middle;
@@ -90,9 +72,14 @@ span.glyphicon {
 }
 
 .form-control {
-		max-width: 500px;
-
+    text-align: center;
 }
+
+.dropdown {
+    margin: 10px;
+    width: 100%;
+  }
+
 
 .jumbotron {
   position: relative;
