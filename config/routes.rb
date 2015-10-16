@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :profiles
   devise_for :users
   root "pages#home"
-  get "dashboard" => "pages#dashboard"
 
 
 
