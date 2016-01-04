@@ -5,12 +5,13 @@
       <h1>Dashboard</h1>
       <div class="container">
         <div class="row">
-          <div class="pad40"></div>
+          <div class="pad10"></div>
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
             <div class="pad20"></div>
             <div class="dash-jumbo-text">
               <strong>Eligibility Inputs</strong>
             </div>
+            <div class="pad10"></div>
             <table>
               <thead>
                 <tr>
@@ -26,8 +27,8 @@
                 <% end %>
               </tbody>
             </table>
-          </div>
-          <table>
+            <div class="pad10"></div>
+            <table>
               <thead>
                 <tr>
                   <th>Loans</th>
@@ -42,8 +43,8 @@
                 <% end %>
               </tbody>
             </table>
-          </div>
-          <table>
+            <div class="pad10"></div>
+            <table>
               <thead>
                 <tr>
                   <th>Amount</th>
@@ -58,10 +59,18 @@
                 <% end %>
               </tbody>
             </table>
-            <% @profiles.each do |profile| %>
-              <%= link_to 'Edit', edit_profile_path(profile) %>
-            <% end %>
-          </div>
+            <div class="pad10"></div>
+            <table>
+              <tbody>
+                <% @profiles.each do |profile| %>
+                  <tr>
+                    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+                    <!-- <%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %> -->
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>    
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-center">
             <div class="pad20"></div>
             <div class="dash-jumbo-text">
