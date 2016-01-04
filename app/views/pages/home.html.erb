@@ -11,7 +11,7 @@
 	  <div class="pad60"></div>
 	  <div class="landing-btn-pad text-center">
 	    <% if user_signed_in? %>
-	      <%= link_to "Let's Get Started", new_profile_path, class: "btn btn-primary btn-lg" %>
+	      <%= link_to "My Dashboard", profiles_path, class: "btn btn-primary btn-lg" %>
 	    <% else %>
 	      <%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
 			  <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
@@ -33,62 +33,55 @@
 	    	<div class="pad20"></div>
 	  	</div>
 	  	<div class="col-lg-offset-1 col-md-offset-1"></div>
-	    <%= image_tag('mobileimg.png') %>
+	    	<%= image_tag('mobileimg.png') %>
 	  </div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-	  <div class="row">
-	    <div class="pad80"></div>
-		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-		    <span class="glyphicon glyphicon-ok pull-right" aria-hidden="true"></span>
+		  <div class="row">
+		    <div class="pad80"></div>
+			  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			    <span class="glyphicon glyphicon-ok pull-right" aria-hidden="true"></span>
+			  </div>
+			  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			    <div class="landing-jumbo-text2 pad5">
+			      <strong>Eligibility</strong></h1>
+			    </div>
+			    <p>Quickly determine if you’re loans, employment, and payments make you eligible for PSLF.</p>
+			  </div>
 		  </div>
-		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-		    <div class="landing-jumbo-text2 pad5">
-		      <strong>Eligibility</strong></h1>
-		    </div>
-		    <p>Quickly determine if you’re loans, employment, and payments make you eligible for PSLF.</p>
+		  <div class="pad40"></div>
+		  <div class="row">
+		    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			    <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span>
+			  </div>
+			  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			    <div class="landing-jumbo-text2">
+			      <strong>Forms</strong></h1>
+			    </div>
+			    <p>Access and store the necessary PSLF paperwork all in one convenient location.</p>
+			  </div>
 		  </div>
-	  </div>
-	  <div class="pad40"></div>
-	  <div class="row">
-	    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-		    <span class="glyphicon glyphicon-list-alt pull-right" aria-hidden="true"></span>
+		  <div class="pad40"></div>
+		  <div class="row">
+			  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			    <span class="glyphicon glyphicon-share pull-right" aria-hidden="true"></span>
+			  </div>
+			  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+			    <div class="landing-jumbo-text2 pad5">
+			      <strong>Track and Submit</strong></h1>
+			    </div>
+			    <p>Review, track, and ultimately submit for Public Service Loan Forgiveness.</p>
+			  </div>
 		  </div>
-		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-		    <div class="landing-jumbo-text2">
-		      <strong>Forms</strong></h1>
-		    </div>
-		    <p>Access and store the necessary PSLF paperwork all in one convenient location.</p>
-		  </div>
-	  </div>
-	  <div class="pad40"></div>
-	  <div class="row">
-		  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-		    <span class="glyphicon glyphicon-share pull-right" aria-hidden="true"></span>
-		  </div>
-		  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-		    <div class="landing-jumbo-text2 pad5">
-		      <strong>Track and Submit</strong></h1>
-		    </div>
-		    <p>Review, track, and ultimately submit for Public Service Loan Forgiveness.</p>
-		  </div>
-	  </div>
+		</div>
 	</div>
+  <div class="pad80"></div>
+  <div class="text-center">
+    <% if user_signed_in? %>
+    	<%= link_to "My Dashboard", profiles_path, class: "btn btn-primary btn-lg" %>
+  	<% else %>
+    	<%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
+	  	<%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  	<% end %>
   </div>
-    <div class="pad80">
-    </div>
-    <div class="text-center">
-	    <% if user_signed_in? %>
-	    	<% if user_has_profile? %>
-	    		<%= link_to "Let's Go", edit_profile_path, class: "btn btn-primary btn-lg" %>
-	    	<% else %>
-      		<%= link_to "Let's Get Started", new_profile_path, class: "btn btn-primary btn-lg" %>
-      	<% end %>
-    	<% else %>
-      	<%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
-		  	<%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-    	<% end %>
-    </div>
-    <div class="pad60">
-    </div>
-  </div>
+  <div class="pad60"></div>
 </div>
