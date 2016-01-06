@@ -6,9 +6,9 @@
       <div class="container">
         <div class="row">
           <div class="pad10"></div>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <div class="pad20"></div>
-            <div class="dash-jumbo-text">
+            <div class="dash-jumbo-text-profile">
               <strong>Eligibility Inputs</strong>
             </div>
             <div class="pad10"></div>
@@ -71,7 +71,7 @@
                 <% @profiles.each do |profile| %>
                   <tr>
                     <% if profile.user == current_user %>
-                      <td><%= link_to 'Edit Eligibility Inputs', edit_profile_path(profile) %></td>
+                      <td><%= link_to 'Edit Inputs', edit_profile_path(profile) %></td>
                     <% end %>
                   </tr>
                 <% end %>
@@ -87,12 +87,12 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <div class="pad20"></div>
-            <div class="dash-jumbo-text">
+            <div class="dash-jumbo-text-profile">
               <strong>Employment Form</strong>
             </div>
-            <div class="text.explanation">
+            <div class="text-explanation-profile">
               <% if current_user.profile == nil %>
                 <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
               <% else %>
@@ -102,21 +102,21 @@
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
                 <% elsif current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == "I don't know" %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know" %>
+                <% elsif current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Federal student loans' %>
+                  <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
+                <% elsif current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Both' %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
                 <% elsif current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know" %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know" %>
+                <% elsif current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Federal student loans' %>
+                  <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
+                <% elsif current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Both' %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
                 <% elsif current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know" %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know" %>
+                <% elsif current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Federal student loans' %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know" %>
-                  <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know" %>
-                  <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
-                <% elsif current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know" %>
+                <% elsif current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Both' %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
                 <% elsif current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know" %>
                   <%= "Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!" %>
@@ -130,9 +130,9 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <div class="pad20"></div>
-            <div class="dash-jumbo-text">
+            <div class="dash-jumbo-text-profile">
               <strong>Tracking Payments</strong>
             </div>
           </div>
