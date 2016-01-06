@@ -79,7 +79,7 @@
               </tbody>
             </table>
             <div class="text-center">
-              <% if current_user.loans == nil %>
+              <% if current_user.profile == nil %>
                 <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
               <% end %>
             </div>

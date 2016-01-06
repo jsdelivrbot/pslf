@@ -18,7 +18,7 @@
           <h2>1. Employment</h2>
           <p>Select the label that best represents your current employer.</p>
           <div class="form-group">
-            <%= f.select(:employment, ['Not-for-profit (Section 501(c)(3))', 'AmeriCorps or Peace Corps', 'Other qualifying public services', 'None of the above'],{ prompt: "Government (fed, state, or local)" }, { :class => "form-control" }) %>
+            <%= f.select(:employment, ['Government (fed, state, or local)', 'Not-for-profit (Section 501(c)(3))', 'AmeriCorps or Peace Corps', 'Other qualifying public services', 'None of the above'],{ prompt: "Select Your Employer Type" }, { :class => "form-control" }) %>
           </div>
         </div>
       </div>
@@ -31,10 +31,10 @@
           <h2>2. Loans</h2>
           <p>Select the type and balance of your student loan portfolio.</p>
           <div class="form-group">
-            <%= f.select(:loans, ['Private', 'Both', "I don't know"],{ prompt: "Federal" }, { :class => "form-control" }) %>
+            <%= f.select(:loans, ['Federal student loans', 'Private student loans', 'Both', "I don't know"],{ prompt: "Select Your Student Loan Type" }, { :class => "form-control" }) %>
           </div>
           <div class="form-group">
-            <%= f.select(:amount, ['$5,001-$15,000','$15,001-$30,000', "$30,001-$50,000", "$50,001-$75,000", "$75,001-$100,000", "$100,001+"], { prompt: "$0-$5,000" }, { :class => "form-control" }) %>
+            <%= f.select(:amount, ['$0-$5,000', '$5,001-$15,000','$15,001-$30,000', "$30,001-$50,000", "$50,001-$75,000", "$75,001-$100,000", "$100,001+"], { prompt: "Select Your Student Loan Amount" }, { :class => "form-control" }) %>
           </div>
         </div>
       </div>
