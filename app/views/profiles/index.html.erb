@@ -110,6 +110,26 @@
                       <div class="text-explanation-profile"> Download the form to the left, fill out the portions you can, have your employer verify and sign the remaining sections, and once you're finished, upload the completed form and we'll file it with PHEAA (the federal agency that oversees PSLF). </div>
                     </div>
                   </div>
+                  <div class="pad20"></div> 
+                  <%= form_for (@profile) do |f| %>
+                    <% if @profile.errors.any? %>
+                      <div id="error_explanation">
+                        <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this file from being saved:</h2>
+                        <ul>
+                        <% @profile.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        <% end %>
+                        </ul>
+                      </div>
+                    <% end %>
+                    <div class="form-group">
+                      <%= f.label :image %>
+                      <%= f.file_field :image, class: "form-control" %>
+                    </div>
+                    <div class="CTA">
+                      <p><%= f.submit "Upload Employment Verification Form", class: "btn btn-primary btn-lg" %></p>
+                    </div>
+                  <% end %>
                 <% else %>
                   <%= "Unfortunately, based on your Eligibility Inputs it seems like you may not be eligible for Public Service Loan Forgiveness at this time. You can review the requirements here." %> -->
                 <% end %>

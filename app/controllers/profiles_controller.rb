@@ -54,7 +54,6 @@ class ProfilesController < ApplicationController
     @profile.destroy
     respond_to do |format|
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
@@ -66,6 +65,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:employment, :loans, :amount)
+      params.require(:profile).permit(:employment, :loans, :amount, :image)
     end
 end
