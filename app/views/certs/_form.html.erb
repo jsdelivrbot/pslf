@@ -1,4 +1,4 @@
-<%= form_for(@cert) do |f| %>
+<%= form_for @cert, html: { multipart: true } do |f| %>
   <% if @cert.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cert.errors.count, "error") %> prohibited this cert from being saved:</h2>
@@ -11,9 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -76,6 +76,6 @@ class CertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cert_params
-      params.require(:cert).permit(:description)
+      params.require(:cert).permit(:description, :image)
     end
 end
