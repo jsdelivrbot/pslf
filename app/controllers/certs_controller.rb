@@ -1,5 +1,7 @@
 class CertsController < ApplicationController
   before_action :set_cert, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /certs
   # GET /certs.json
@@ -14,7 +16,7 @@ class CertsController < ApplicationController
 
   # GET /certs/new
   def new
-    @cert = Cert.new
+    @cert = current_user.certs.build
   end
 
   # GET /certs/1/edit
@@ -24,7 +26,7 @@ class CertsController < ApplicationController
   # POST /certs
   # POST /certs.json
   def create
-    @cert = Cert.new(cert_params)
+    @cert = current_user.certs.build(cert_params)
 
     respond_to do |format|
       if @cert.save
@@ -65,6 +67,11 @@ class CertsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cert
       @cert = Cert.find(params[:id])
+    end
+
+    def correct_user
+      @cert = current_user.certs.find_by(id: params[:id])
+      redirect_to certs_path, notice: "Not authorized to edit this cert" if @cert.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
