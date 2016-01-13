@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :docs
+  resources :certs
   resources :profiles
   devise_for :users
   root "pages#home"

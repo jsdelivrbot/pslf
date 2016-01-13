@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_one :profile
 
+
   def has_profile
   	profile != nil
   end
