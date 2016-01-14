@@ -1,27 +1,70 @@
 <div class="container">
 	<div class="jumbotron app center">
-		<h1>Employment Verification Form</h1>
-		<div class="pad40"></div>
+		<h4>Progress</h4>
+		<div class="row bs-wizard" style="border-bottom:0;">
+	    <div class="col-xs-2 col-xs-offset-3 bs-wizard-step complete">
+	      <div class="progress"><div class="progress-bar"></div></div>
+	        <a href="#" class="bs-wizard-dot">
+	          <span class="bs-wizard-step-num">1</span>
+	          <span class="glyphicon glyphicon-ok progress" aria-hidden="true"></span>
+	        </a>
+	      </div>
+	      <div class="col-xs-2 bs-wizard-step active"><!-- complete --> 
+	        <div class="progress"><div class="progress-bar"></div></div>
+	        <a href="#" class="bs-wizard-dot">
+	          <span class="bs-wizard-step-num">2</span>
+	        </a>
+	      </div>
+	      <div class="col-xs-2 bs-wizard-step disabled"><!-- complete --> 
+	        <div class="progress"><div class="progress-bar"></div></div>
+	        <a href="#" class="bs-wizard-dot">
+	          <span class="bs-wizard-step-num">3</span>
+	        </a>
+	      </div>
+	  	</div>
+		<div class="pad20"></div>
 		<div class="text-explanation-cert">
       <% if current_user.profile == nil %>
         <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
       <% else %>
         <% if (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know") %>
-          <h2>"Congratulations! It looks like you may qualify for Public Service Loan Forgiveness!"</h2>
-          <div class="pad20"></div> 
-          <div class="media">
-            <div class="media-left">
-              <a href="https://studentaid.ed.gov/sa/sites/default/files/public-service-employment-certification-form.pdf", target= "_blank">
-                <span class="glyphicon glyphicon-download-alt" alt="PSLF Employment Verification Form">
-              </a>
-            </div>
-            <div class="media-body">
-              <h3 class="media-heading">Employment Verification Form</h3>
-              <div class="text-explanation-profile"> Download the form to the left, fill out the portions you can, have your employer verify and sign the remaining sections, and once you're finished, upload the completed form and we'll file it with PHEAA (the federal agency that oversees PSLF). </div>
-            </div>
-          </div>
-          <div class="pad60"></div>
-          <%= render 'form' %>
+          <h1>Congratulations!</h1>
+          <p>It looks like you may qualify for Public Service Loan Forgiveness! Now...</p>
+
+          <div class="container">
+				    <div class="row">
+				      <div class="explanation center">
+				        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+				        	<h2>1. Download Employment Verification Form</h2>
+				        	<div class="media">
+            				<div class="media-center">
+              				<a href="https://studentaid.ed.gov/sa/sites/default/files/public-service-employment-certification-form.pdf", target= "_blank">
+                			<span class="glyphicon glyphicon-download-alt" alt="PSLF Employment Verification Form">
+              				</a>
+            				</div>
+            			</div>
+            			<div class="pad10"></div> 
+            			<div class="media-body">
+              			<div class="text-explanation-cert"> Click the icon above to retrieve the Employment Verification Form. Gill out the portions you can, have your employer verify and sign the remaining sections.</div>
+            			</div>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="pad30"></div> 
+				  <div class="container">
+				    <div class="row">
+				      <div class="explanation center">
+				        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+				          <h2>2. Upload Completed Form</h2>
+				          <p>When you upload and submit the form, we will send it to PHEAA (the federal agency that monitors the benefit) on your behalf.</p>
+				        <div class="pad10"></div>
+          			<%= render 'form' %>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+          
         <% else %>
           <%= "Unfortunately, based on your Eligibility Inputs it seems like you may not be eligible for Public Service Loan Forgiveness at this time. You can review the requirements here." %>
         <% end %>

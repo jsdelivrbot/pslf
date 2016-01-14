@@ -33,6 +33,19 @@ span.glyphicon {
     color: #16a085;
 }
 
+span.dash {
+    font-size: 20px;
+    color: #16a085;
+}
+
+span.progress {
+    font-size: 15px;
+    color: white;
+    display:inline;
+    background-color: transparent;
+
+}
+
 .btn {
 		padding: 15px;
 		width: 200px;
@@ -254,3 +267,31 @@ span.glyphicon {
 
 .pad5 {
   padding-top: 5px; }
+
+
+/*Form Wizard*/
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: white; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #63b1a4; top: 24px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;text-align:center;line-height:30px;} 
+/*.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #fbbd19; border-radius: 50px; position: absolute; top: 8px; left: 8px; } */
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #63b1a4;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.complete > .bs-wizard-dot > .bs-wizard-step-num {display:none}
+.bs-wizard > .bs-wizard-step.complete > .bs-wizard-dot > .bs-wizard-check {display:inline}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step.active > .bs-wizard-dot > .bs-wizard-step-num {color:white;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot > .bs-wizard-step-num {display:inline;font-size:20px;color:white}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot > .bs-wizard-check {display:none}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #e0e0e0;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 0%;}
+.bs-wizard > .bs-wizard-step:first-child > .bs-wizard-dot {left:0; }
+.bs-wizard > .bs-wizard-step:last-child  > .bs-wizard-dot {left: 100%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+/*END Form Wizard*/  

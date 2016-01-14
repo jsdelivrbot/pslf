@@ -2,96 +2,102 @@
   <div class="jumbotron app">
     <div class="text-center">
       <h1>Dashboard</h1>
-      <div class="container">
-        <div class="row">
-          <div class="pad10"></div>
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <div class="pad20"></div>
-            <div class="dash-jumbo-text-profile">
-              <strong>1. Eligibility Inputs</strong>
-            </div>
-            <div class="pad10"></div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Employment</th>
-                  <th colspan="1"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @profiles.each do |profile| %>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <span class="glyphicon glyphicon-ok dash" aria-hidden="true"></span>
+              <strong> 1. Eligibility Inputs</strong>
+              <span class="caret"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body">
+              <table>
+                <thead>
                   <tr>
-                    <% if profile.user == current_user %>
-                      <td><%= profile.employment %></td>
-                    <% end %>
+                    <th>Employment</th>
+                    <th colspan="1"></th>
                   </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <div class="pad10"></div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Loans</th>
-                  <th colspan="1"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @profiles.each do |profile| %>
+                </thead>
+                <tbody>
+                  <% @profiles.each do |profile| %>
+                    <tr>
+                      <% if profile.user == current_user %>
+                        <td><%= profile.employment %></td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <div class="pad10"></div>
+              <table>
+                <thead>
                   <tr>
-                    <% if profile.user == current_user %>
-                      <td><%= profile.loans %></td>
-                    <% end %>
+                    <th>Loans</th>
+                    <th colspan="1"></th>
                   </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <div class="pad10"></div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Amount</th>
-                  <th colspan="1"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @profiles.each do |profile| %>
+                </thead>
+                <tbody>
+                  <% @profiles.each do |profile| %>
+                    <tr>
+                      <% if profile.user == current_user %>
+                        <td><%= profile.loans %></td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <div class="pad10"></div>
+              <table>
+                <thead>
                   <tr>
-                    <% if profile.user == current_user %>
-                      <td><%= profile.amount %></td>
-                    <% end %> 
+                    <th>Amount</th>
+                    <th colspan="1"></th>
                   </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <div class="pad10"></div>
-            <table>
-              <tbody>
-                <% @profiles.each do |profile| %>
-                  <tr>
-                    <% if profile.user == current_user %>
-                      <td><%= link_to 'Edit Inputs', edit_profile_path(profile) %></td>
-                    <% end %>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <div class="text-center">
-              <% if current_user.profile == nil %>
-                <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
-              <% end %>
+                </thead>
+                <tbody>
+                  <% @profiles.each do |profile| %>
+                    <tr>
+                      <% if profile.user == current_user %>
+                        <td><%= profile.amount %></td>
+                      <% end %> 
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <div class="pad10"></div>
+              <table>
+                <tbody>
+                  <% @profiles.each do |profile| %>
+                    <tr>
+                      <% if profile.user == current_user %>
+                        <td><%= link_to 'Edit Inputs', edit_profile_path(profile) %></td>
+                      <% end %>
+                      <% if current_user.profile == nil %>
+                        <td><%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %></td>
+                      <% end %>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <div class="pad20"></div>
-            <div class="dash-jumbo-text-profile">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <span class="glyphicon glyphicon-ok dash" aria-hidden="true"></span>
               <strong>2. Employment Form</strong>
-            </div>
-            <div class="text-explanation-profile">
+              <span class="caret"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="panel-body">
               <% if current_user.profile == nil %>
                 <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
               <% else %>
@@ -118,19 +124,22 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-            <div class="pad20"></div>
-            <div class="dash-jumbo-text-profile">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
               <strong>3. Tracking Payments</strong>
+              <span class="caret"></span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+            <div class="panel-body">
+            <%= image_tag('mobileimg.png') %>
             </div>
           </div>
         </div>
       </div>
-      <div class="pad80"></div>
-      <%= image_tag('mobileimg.png') %>
     </div>
   </div>
 </div>

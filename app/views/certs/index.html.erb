@@ -13,7 +13,7 @@
       <tbody>
         <% @certs.each do |cert| %>
           <tr>
-            <td><%= cert.image %></td>
+            <td><%= cert.document %></td>
             <td><%= cert.description %></td>
             <td><%= link_to 'Show', cert %></td>
             <td><%= link_to 'Edit', edit_cert_path(cert) %></td>

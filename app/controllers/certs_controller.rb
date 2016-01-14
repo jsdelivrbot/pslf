@@ -22,7 +22,7 @@ class CertsController < ApplicationController
 
     respond_to do |format|
       if @cert.save
-        format.html { redirect_to @cert, notice: 'Cert was successfully created.' }
+        format.html { redirect_to profiles_path, notice: 'Employment verification form was successfully uploaded.' }
       else
         format.html { render :new }
       end
@@ -32,7 +32,7 @@ class CertsController < ApplicationController
   def update
     respond_to do |format|
       if @cert.update(cert_params)
-        format.html { redirect_to @cert, notice: 'Cert was successfully updated.' }
+        format.html { redirect_to profiles_path, notice: 'Employment verification form was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -42,7 +42,7 @@ class CertsController < ApplicationController
   def destroy
     @cert.destroy
     respond_to do |format|
-      format.html { redirect_to certs_url, notice: 'Cert was successfully destroyed.' }
+      format.html { redirect_to certs_url, notice: 'Employment verification form was successfully destroyed.' }
     end
   end
 
