@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :image %><br>
-    <%= f.file_field :image, class: "form-control" %>
+    <%= f.label :Choose_File %><br>
+    <%= f.file_field :document, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :description %><br>
+    <%= f.label :Brief_Description %><br>
     <%= f.text_field :description, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="CTA">
+    <p><%= f.submit "Upload My Form", class: "btn btn-primary btn-lg" %></p>
   </div>
 <% end %>

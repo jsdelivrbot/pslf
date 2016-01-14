@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to profiles_url, notice: 'Profile was successfully created.' }
+        format.html { redirect_to new_cert_url, notice: 'Employment information successfully added.' }
       else
         format.html { render :new }
       end
@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to profiles_url, notice: 'Profile was successfully edited.' }
+        format.html { redirect_to new_cert_url, notice: 'Employment information was successfully edited.' }
       else
         format.html { render :edit }
       end
