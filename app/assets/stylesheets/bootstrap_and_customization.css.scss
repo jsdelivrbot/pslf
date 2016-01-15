@@ -63,6 +63,12 @@ span.progress {
   	}
 }
 
+.btn-xs {
+    height: 30px;
+    width: 100px;
+    vertical-align: middle;
+}
+
 .btn-default {
 		background-color: #53a797;
   	border: 3px solid #53a797;
@@ -109,6 +115,16 @@ span.progress {
 .jumbotron {
   position: relative;
   background: url("pslf_background.jpg") no-repeat center center;
+  min-height: 550px;
+  color: white;
+  background-size: cover;
+
+}
+
+.about {
+  position: relative;
+  background: url("about.jpg") no-repeat center center;
+  min-height: 200px;
   color: white;
   background-size: cover;
 
@@ -295,3 +311,17 @@ span.progress {
 .bs-wizard > .bs-wizard-step:last-child  > .bs-wizard-dot {left: 100%;}
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
 /*END Form Wizard*/  
+
+
+/* Progress*/
+
+.progress {
+    height: 300px;
+}
+.progress > svg {
+    height: 100%;
+    display: block;
+}
+
+
+

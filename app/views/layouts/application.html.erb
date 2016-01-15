@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Pslf</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -9,7 +10,19 @@
 </head>
 <body>
 	
-	<%= render 'layouts/header' %>
+  <% if current_page?(root_path) %>
+    <%= render 'layouts/header' %>
+  <% elsif current_page?(profiles_path) %>
+    <%= render 'layouts/dash_header' %>
+  <% elsif current_page?(certs_path) %>
+    <%= render 'layouts/forms_header' %> 
+  <% elsif current_page?(edit_user_registration_path) %>
+    <%= render 'layouts/account_header' %> 
+  <% elsif current_page?(about_path) %>
+    <%= render 'layouts/about_header' %>
+  <% else %>
+    <%= render 'layouts/dash_header' %>
+  <% end %>
 
 		<% flash.each do |name, msg| %>
      <%= content_tag(:div, msg, class: "alert alert-info") %>

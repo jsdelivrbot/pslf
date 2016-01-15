@@ -30,82 +30,42 @@
             <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <span class="glyphicon glyphicon-ok dash" aria-hidden="true"></span>
-                <strong> 1. Eligibility Inputs</strong>
-                <span class="caret"></span>
+                <h4><strong> 1. Eligibility Inputs<span class="caret"></span></strong></h4>
                 </a>
               </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Employment</th>
-                      <th colspan="1"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @profiles.each do |profile| %>
-                      <tr>
-                        <% if profile.user == current_user %>
-                          <td><%= profile.employment %></td>
-                        <% end %>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                <h4><strong><u>Employment</u></strong></h4>
+                <% @profiles.each do |profile| %>
+                  <% if profile.user == current_user %>
+                    <%= profile.employment %>
+                  <% end %>
+                <% end %>
                 <div class="pad10"></div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Loans</th>
-                      <th colspan="1"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @profiles.each do |profile| %>
-                      <tr>
-                        <% if profile.user == current_user %>
-                          <td><%= profile.loans %></td>
-                        <% end %>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                <h4><strong><u>Loans</u></strong></h4>
+                <% @profiles.each do |profile| %>
+                  <% if profile.user == current_user %>
+                    <%= profile.loans %>
+                  <% end %>
+                <% end %>
                 <div class="pad10"></div>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Amount</th>
-                      <th colspan="1"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @profiles.each do |profile| %>
-                      <tr>
-                        <% if profile.user == current_user %>
-                          <td><%= profile.amount %></td>
-                        <% end %> 
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                <h4><strong><u>Amount</u></strong></h4>
+                <% @profiles.each do |profile| %>
+                  <% if profile.user == current_user %>
+                    <%= profile.amount %>
+                  <% end %> 
+                <% end %>
                 <div class="pad10"></div>
-                <table>
-                  <tbody>
-                    <% @profiles.each do |profile| %>
-                      <tr>
-                        <% if profile.user == current_user %>
-                          <td><%= link_to 'Edit Inputs', edit_profile_path(profile) %></td>
-                        <% end %>
-                        <% if current_user.profile == nil %>
-                          <td><%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %></td>
-                        <% end %>
+                <% @profiles.each do |profile| %>
+                  <% if profile.user == current_user %>
+                    <%= link_to 'Edit Inputs', edit_profile_path(profile), class: "btn btn-primary btn-lg" %>
+                  <% end %>
+                  <% if current_user.profile == nil %>
+                    <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-lg" %>
+                  <% end %>
                       </tr>
-                    <% end %>
-                  </tbody>
-                </table>
+                <% end %>
               </div>
             </div>
           </div>
@@ -113,16 +73,14 @@
             <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <span class="glyphicon glyphicon-ok dash" aria-hidden="true"></span>
-                <strong>2. Employment Form</strong>
-                <span class="caret"></span>
+                <h4><strong>2. Employment Form<span class="caret"></span></strong></h4>
                 </a>
               </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="panel-body">
                 <% if current_user.profile == nil %>
-                  <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-md" %>
+                  <%= link_to "Add Eligibility Inputs", new_profile_path, class: "btn btn-primary btn-lg" %>
                 <% else %>
                   <% if (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know") %>
                     <h2>Based on your inputs, it looks like you probably qualify for Public Service Loan Forgiveness.</h2>
@@ -143,8 +101,8 @@
                     <div class="pad10"></div>
                     <%= link_to 'Upload New Employment Verification Form', new_cert_path %>
                   <% else %>
-                    <h3>Unfortunately, based on your Eligibility Inputs it seems like you may not be eligible for Public Service Loan Forgiveness at this time. You can review the requirements here.</h3>
-                    <%= link_to 'Edit Eligibility Inputs', edit_profile_path(current_user.profile) %>
+                    <h4>Unfortunately, based on your Eligibility Inputs it seems like you may not be eligible for Public Service Loan Forgiveness at this time. You can review the requirements here.</h4>
+                    <%= link_to 'Edit Eligibility Inputs', edit_profile_path(current_user.profile), class: "btn btn-primary btn-lg" %>
                   <% end %>
                 <% end %>
               </div>
@@ -154,15 +112,14 @@
             <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                <strong>3. Tracking Payments</strong>
-                <span class="caret"></span>
+                <h4><strong>3. Tracking Payments<span class="caret"></span></strong></h4>
                 </a>
               </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
                 <h4>Once you get email confirmation from FedLoan (PHEAA) that your employment verification form was accepted, enter the number of verified payments you've already made and we'll help you track your payments moving forward.</h4>
-                <%= image_tag('mobileimg.png') %>
+                <%= render 'tracker' %>
               </div>
             </div>
           </div>
