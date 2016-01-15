@@ -1,9 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="jumbotron app center">
+		<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @cert.description %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @cert.description %>
+		</p>
 
-<%= link_to 'Edit', edit_cert_path(@cert) %> |
-<%= link_to 'Back', certs_path %>
+		<%= link_to 'Edit', edit_cert_path(@cert) %> |
+		<%= link_to 'Back', certs_path %>
+	</div>
+</div>

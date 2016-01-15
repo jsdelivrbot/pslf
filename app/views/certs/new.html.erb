@@ -30,7 +30,7 @@
         <% if (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Government (fed, state, or local)' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Not-for-profit (Section 501(c)(3))' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'AmeriCorps or Peace Corps' && current_user.profile.loans == "I don't know") || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Federal student loans') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == 'Both') || (current_user.profile.employment == 'Other qualifying public services' && current_user.profile.loans == "I don't know") %>
           <h1>Congratulations!</h1>
           <p>It looks like you may qualify for Public Service Loan Forgiveness! Now...</p>
-
+					<div class="pad30"></div> 
           <div class="container">
 				    <div class="row">
 				      <div class="explanation center">
@@ -45,19 +45,19 @@
             			</div>
             			<div class="pad10"></div> 
             			<div class="media-body">
-              			<div class="text-explanation-cert"> Click the icon above to retrieve the Employment Verification Form. Gill out the portions you can, have your employer verify and sign the remaining sections.</div>
+              			<div class="text-explanation-cert"> Click the icon above (opens new tab) to retrieve the Employment Verification Form. Fill out the portions you can, then have your employer verify and sign the remaining sections.</div>
             			</div>
 				        </div>
 				      </div>
 				    </div>
 				  </div>
-				  <div class="pad30"></div> 
+				  <div class="pad50"></div> 
 				  <div class="container">
 				    <div class="row">
 				      <div class="explanation center">
 				        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 				          <h2>2. Upload Completed Form</h2>
-				          <p>When you upload and submit the form, we will send it to PHEAA (the federal agency that monitors the benefit) on your behalf.</p>
+				          <p>Once you and your employer have completed the form, upload and submit it below and we will send it to PHEAA (the federal agency that monitors the benefit) on your behalf.</p>
 				        <div class="pad10"></div>
           			<%= render 'form' %>
 				        </div>

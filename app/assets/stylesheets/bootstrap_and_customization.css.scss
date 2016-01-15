@@ -53,24 +53,24 @@ span.progress {
 }
 
 .btn-primary {
-		background-color: transparent;
+		background-color: #f26c4f;
   	border: 3px solid #f26c4f;
-  	color: #f26c4f;
+  	color: white;
   	&:hover {
-  			background-color: #f26c4f;
-  			border: 3px solid #f26c4f;
+  			background-color: #f04722;
+  			border: 3px solid #f04722;
   			color: white;
   	}
 }
 
 .btn-default {
-		background-color: transparent;
-  	border: 3px solid #16a085;
-  	color: #16a085;
+		background-color: #53a797;
+  	border: 3px solid #53a797;
+  	color: white;
   	&:hover {
-        background-color: #16a085;
+        background-color: #0f836c;
   			color: white;
-  			border: 3px solid #16a085;
+  			border: 3px solid #0f836c;
     }
 }
 
@@ -108,7 +108,7 @@ span.progress {
 
 .jumbotron {
   position: relative;
-  background: url("School.png") no-repeat center center;
+  background: url("pslf_background.jpg") no-repeat center center;
   color: white;
   background-size: cover;
 
