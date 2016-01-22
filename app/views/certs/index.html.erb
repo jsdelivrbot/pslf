@@ -1,30 +1,29 @@
 <div class="container">
   <div class="jumbotron app center">
-    <h1>Completed Forms</h1>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Description</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @certs.each do |cert| %>
-          <tr>
-            <td><%= cert.document %></td>
-            <td><%= cert.description %></td>
-            <td><%= link_to 'Show', cert %></td>
-            <td><%= link_to 'Edit', edit_cert_path(cert) %></td>
-            <td><%= link_to 'Destroy', cert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
+    <h1>Your Completed Forms</h1>
+    <% @certs.each do |cert| %>
+      <% if cert.user == current_user %>
+        <div class="container">
+          <div class="row">
+            <div class="pad40"></div>
+            <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
+              <div class="about-text-explanation">
+              <span style="font-size:30px;" class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>&nbsp;
+              <%= cert.description %>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="about-text-explanation">
+              <%= link_to 'Download', "#" %>
+              &nbsp;&nbsp;&nbsp;
+              <%= link_to 'Delete', cert, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>  
+    <% end %>
     <br>
-
-    <%= link_to 'New Cert', new_cert_path %>
+    <%= link_to 'Add New Form', new_cert_path, class: "btn btn-primary btn-md" %>
   </div>
 </div>
