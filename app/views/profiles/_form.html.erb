@@ -15,7 +15,8 @@
     <div class="row">
       <div class="explanation center">
         <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-          <h2>1. Employment</h2>
+          <h2>1. Employment <span style="font-size:14px; vertical-align: text-top;"  class="glyphicon glyphicon-info-sign" aria-hidden="true" role="button" data-toggle="popover" data-trigger="click" data-placement="top" title="Eligible Employment Info" data-content="To qualify, you must work for either the Government (fed, state, or local), Not-for-profit (Section 501(c)(3)), Other qualifying public services, AmeriCorps or Peace Corps. You must also work full-time, or at least 30 hours per week."></span>
+          </h2>
           <p>Select the label that best represents your current employer.</p>
           <div class="form-group">
             <%= f.select(:employment, ['Government (fed, state, or local)', 'Not-for-profit (Section 501(c)(3))', 'AmeriCorps or Peace Corps', 'Other qualifying public services', 'None of the above'],{ prompt: "Select Your Employer Type" }, { :class => "form-control" }) %>
@@ -28,7 +29,8 @@
     <div class="row">
       <div class="explanation center">
         <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-          <h2>2. Loans</h2>
+          <h2>2. Loans <span style="font-size:14px; vertical-align: text-top;"  class="glyphicon glyphicon-info-sign" aria-hidden="true" role="button" data-toggle="popover" data-trigger="click" data-placement="top" title="Eligible Loan Info" data-content="Only federal Direct Loans are eligible for PSLF. However, if you have Federal Family Education Loans (FFEL) or Perkins Loans, you can make adjustments to make them eligible. Learn how on our about page."></span>
+          </h2>
           <p>Select the type and balance of your student loan portfolio.</p>
           <div class="form-group">
             <%= f.select(:loans, ['Federal student loans', 'Private student loans', 'Both', "I don't know"],{ prompt: "Select Your Student Loan Type" }, { :class => "form-control" }) %>
