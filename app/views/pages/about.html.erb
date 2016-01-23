@@ -224,7 +224,18 @@
 	  </div>
 	</div>
 </div>
-<br>
-<br>
-<br>
+<div class="pad40"></div>
+<div class="landing-btn-pad text-center">
+  <% if user_signed_in? %>
+  	<% if current_user.profile == nil %>
+      <%= link_to "Let's Get Started!", new_profile_path, class: "btn btn-primary btn-lg" %>
+    <% else %>
+    	<%= link_to "My Dashboard", profiles_path, class: "btn btn-primary btn-lg" %>
+    <% end %>
+  <% else %>
+    <%= link_to "LOG IN", new_user_session_path, class: "btn btn-default btn-lg" %>
+	  <%= link_to "SIGN UP", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>
+<div class="pad40"></div>
 

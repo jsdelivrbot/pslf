@@ -4,24 +4,28 @@
 		<div class="row bs-wizard" style="border-bottom:0;">
 	    <div class="col-xs-2 col-xs-offset-3 bs-wizard-step complete">
 	      <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot">
+	        <div class="bs-wizard-dot">
 	          <span class="bs-wizard-step-num">1</span>
 	          <span class="glyphicon glyphicon-ok progress" aria-hidden="true"></span>
-	        </a>
+	          <div class="pad5"></div>
+	        	<div class="bs-wizard-info pull-left">Eligibility</div>
+	        </div>
 	      </div>
 	      <div class="col-xs-2 bs-wizard-step active"><!-- complete --> 
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot">
+	        <div class="bs-wizard-dot">
 	          <span class="bs-wizard-step-num">2</span>
-	        </a>
+	        </div>
+	        <div class="bs-wizard-info text-center">Forms</div>
 	      </div>
 	      <div class="col-xs-2 bs-wizard-step disabled"><!-- complete --> 
 	        <div class="progress"><div class="progress-bar"></div></div>
-	        <a href="#" class="bs-wizard-dot">
+	        <div class="bs-wizard-dot">
 	          <span class="bs-wizard-step-num">3</span>
-	        </a>
+	          <div class="bs-wizard-info pull-right">Tracking</div>
+	        </div>
 	      </div>
-	  	</div>
+	  	</div> 
 		<div class="pad20"></div>
 		<div class="text-explanation-cert">
       <% if current_user.profile == nil %>
@@ -64,7 +68,6 @@
 				      </div>
 				    </div>
 				  </div>
-          
         <% else %>
           <%= "Unfortunately, based on your Eligibility Inputs it seems like you may not be eligible for Public Service Loan Forgiveness at this time. You can review the requirements here." %>
         <% end %>
